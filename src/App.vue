@@ -1,10 +1,11 @@
-<template>
-  <div>
-    <nav style="display: flex; gap: 1rem; padding: 1rem 0">
-      <router-link to="/">Home</router-link>
-      <router-link to="/projects">Projects</router-link>
-    </nav>
+<script setup>
+import NavBar from "./components/NavBar.vue";
+</script>
 
-    <router-view />
-  </div>
+<template>
+  <!-- Global header -->
+  <NavBar />
+
+  <!-- Här renderas sidorna (Home, About, Contact, ProjectDetail) -->
+  <router-view />
 </template>

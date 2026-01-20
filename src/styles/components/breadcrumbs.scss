@@ -1,0 +1,35 @@
+.breadcrumbs {
+  padding-bottom: 3rem;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+
+.breadcrumbs__list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.breadcrumbs__link {
+  text-decoration: none;
+  color: #e8452a;
+}
+
+.breadcrumbs__link:hover {
+  opacity: 0.7;
+}
+
+.breadcrumbs__current {
+  color: #e8452a;
+  font-weight: 500;
+}
+
+.breadcrumbs__sep {
+  opacity: 0.6;
+  margin: 0 0.4rem;
+  color: #e8452a;
+}

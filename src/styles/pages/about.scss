@@ -1,0 +1,237 @@
+.about {
+  padding: 2rem 4rem;
+  margin: 0;
+  color: #e8452a;
+  font-family: "DM Sans", sans-serif;
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  &__container {
+    &-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+
+      &-text {
+        &-title {
+          font-size: 2.3rem !important;
+          font-weight: 250 !important;
+          font-style: italic !important;
+          letter-spacing: 0.3px;
+          margin-bottom: 0.7rem !important;
+        }
+        &-paragraph {
+          margin-right: 5.4rem;
+          font-weight: 250;
+          font-size: 1.1rem;
+          line-height: 1.48;
+          max-width: 800px;
+        }
+      }
+
+      &-gif {
+        margin-top: 58px;
+        & img {
+          width: 16rem;
+          height: auto;
+        }
+      }
+      &-experience {
+        margin-top: 3rem;
+        list-style: none;
+        &-education {
+          &-title {
+            font-size: 2.3rem !important;
+            font-weight: 250 !important;
+            letter-spacing: 0.3px;
+            margin-bottom: 0.7rem !important;
+            font-style: italic;
+          }
+          &-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+            &-item {
+              display: flex;
+              flex-direction: row;
+              align-items: baseline;
+              justify-content: space-between;
+              border-bottom: 1px solid #e8452a;
+              padding-bottom: 11px;
+
+              &-title {
+                font-weight: 250 !important;
+                font-size: 1.1rem !important;
+              }
+              &-subtitle {
+                font-weight: 250;
+                font-size: 0.9rem;
+              }
+            }
+          }
+        }
+        &-skills {
+          margin-top: 3rem;
+          &-title {
+            font-size: 2.3rem !important;
+            font-weight: 250 !important;
+            letter-spacing: 0.3px;
+            margin-bottom: 0.7rem !important;
+            font-style: italic;
+          }
+          &-lists {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.7rem;
+            &-list {
+              margin-right: 6rem;
+              &-title {
+                font-size: 1.7rem !important;
+                font-weight: 250 !important;
+                margin-bottom: 0.6rem !important;
+                font-style: italic;
+              }
+              ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                li {
+                  font-weight: 250;
+                  font-size: 1.1rem;
+                  margin-bottom: 0.2rem;
+                }
+              }
+            }
+          }
+        }
+        .third-list {
+          margin-left: -40px !important;
+        }
+      }
+    }
+  }
+}
+
+/* 📱 Mobil (max 768px) */
+@media (max-width: 768px) {
+  .about {
+    padding: 2rem 1.5rem;
+    &__container {
+      &-content {
+        flex-direction: column;
+        align-items: flex-start;
+        &-text {
+          &-title {
+            font-size: 2.3rem !important;
+            margin-bottom: 0.6rem !important;
+          }
+          &-paragraph {
+            margin-right: 0;
+            font-size: 1rem;
+          }
+        }
+        &-gif {
+          margin-top: 30px;
+          margin-bottom: 15px;
+          & img {
+            width: 55%;
+            margin-left: 2.8rem;
+            max-width: 300px;
+          }
+        }
+        &-experience {
+          &-education {
+            &-title {
+              font-size: 2.3rem !important;
+              margin-bottom: 0.6rem !important;
+            }
+            &-list {
+              gap: 10px;
+              &-item {
+                padding-bottom: 10px;
+                align-items: center;
+
+                &-title {
+                  font-size: 1rem !important;
+                  width: 10rem;
+                }
+                &-subtitle {
+                  font-size: 0.9rem !important;
+                  width: 10rem;
+                }
+              }
+            }
+          }
+          &-skills {
+            &-title {
+              font-size: 2.3rem !important;
+              margin-bottom: 0.6rem !important;
+            }
+            &-lists {
+              gap: 1.7rem;
+              &-list {
+                margin-right: 3rem;
+                &-title {
+                  font-size: 1.5rem !important;
+                  margin-bottom: 0.4rem !important;
+                }
+              }
+            }
+          }
+          .third-list {
+            margin-left: 0px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 🖥️ Dator (min-width 1540px) */
+@media (min-width: 1540px) {
+  .about {
+    padding-left: clamp(5rem, 8vw, 12rem);
+    padding-right: clamp(5rem, 8vw, 12rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__container {
+      width: 62rem;
+
+      &-content {
+        flex-direction: row;
+        gap: 0px;
+        &-text {
+          &-paragraph {
+            margin-right: 7rem;
+            max-width: 624px;
+          }
+        }
+        &-gif {
+          margin-top: 30px;
+          & img {
+            width: 16rem;
+            height: auto;
+          }
+        }
+        &-experience {
+          &-skills {
+            &-lists {
+              &-list {
+                margin-right: 8rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

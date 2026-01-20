@@ -1,0 +1,90 @@
+.projectDetail {
+  padding: 2rem 4rem;
+  margin: 0;
+  display: flex;
+  justify-content: start;
+  &__info {
+    flex-direction: column;
+    color: #e8452a;
+    font-family: "DM Sans", sans-serif;
+    padding-bottom: 3.5rem;
+    &-title {
+      font-size: 3.2rem;
+      font-weight: 500;
+      letter-spacing: 0.1px;
+      margin-bottom: 0.4rem;
+      padding-bottom: 1rem;
+    }
+    &-tag {
+      padding-bottom: 1.7rem;
+      &-list {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+      }
+      &-list li {
+        font-style: italic;
+        border: 1px solid #e8452a; /* tag border */
+        border-radius: 9999px; /* pill-form */
+        padding: 5px 11px; /* luft i taggen */
+        font-size: 0.9rem;
+        color: #e8452a;
+        background: transparent;
+        white-space: nowrap; /* ingen radbrytning i en tag */
+        font-weight: 400;
+      }
+    }
+    &-summary {
+      max-width: 780px;
+      font-weight: 250;
+    }
+  }
+  &__imgs {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: min(1820px, 66vw);
+    max-width: 100%;
+    & img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+  }
+}
+
+/* 📱 Mobil (max 768px) */
+@media (max-width: 768px) {
+  .projectDetail {
+    padding: 2rem 1.5rem;
+    &__info {
+      padding-bottom: 2.6rem;
+      &-title {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 0.1rem;
+      }
+    }
+    &__imgs {
+      width: 100%;
+      max-width: 100%;
+      gap: 2rem;
+    }
+  }
+}
+
+/* 🖥️ Dator (min-width 1540px) */
+@media (min-width: 1540px) {
+  .projectDetail {
+    padding-left: clamp(5rem, 8vw, 12rem);
+    padding-right: clamp(5rem, 8vw, 12rem);
+    justify-content: center;
+    &__imgs {
+      width: min(1000px, 66vw);
+    }
+  }
+}

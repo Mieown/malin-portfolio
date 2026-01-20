@@ -1,0 +1,112 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #fdfcf6;
+  border-bottom: 1px solid #eee;
+  padding: 12px 160px;
+  z-index: 10;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0rem;
+    position: relative;
+    &-logo-wrapper {
+      position: absolute;
+      left: 2rem;
+      &-logo {
+        width: 2rem;
+        margin-top: 4px;
+      }
+    }
+    &-inner {
+      display: flex;
+      align-self: center;
+      gap: clamp(1.5rem, 6vw, 4rem);
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.86rem;
+      font-weight: 300;
+      letter-spacing: 0.1px;
+      &-linklike {
+        background: none;
+        border: none;
+        padding: 0;
+        font: inherit;
+        color: #e8452a;
+        cursor: pointer;
+        letter-spacing: 0.1px;
+      }
+    }
+    &-inner :hover {
+      color: #bdb0ae;
+    }
+  }
+  &__menuToggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: #e8452a;
+  }
+  &__mobileMenu {
+    display: none;
+  }
+}
+
+/* 📟 Tablet (700–1100px) */
+@media (min-width: 700px) and (max-width: 1100px) {
+  .navbar {
+    padding: 12px 80px;
+  }
+  .navbar__container-inner {
+    gap: 6rem; /* mindre gap men inte helt ihoppressat */
+    justify-content: center;
+  }
+}
+
+/* 📱 Mobil (max 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 24px;
+    border-bottom: none;
+  }
+  .navbar__container-inner {
+    display: none; // göm desktop-nav
+  }
+
+  .navbar__menuToggle {
+    display: block; // visa hamburger
+  }
+
+  .navbar__mobileMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.2rem;
+    background: #fdfcf6;
+    border-top: none;
+
+    a,
+    button {
+      background: none;
+      border: none;
+      padding: 0;
+      font: inherit;
+      color: #e8452a;
+      text-align: left;
+      cursor: pointer;
+    }
+  }
+}
+
+/* 🖥️ Dator (min-width 1540px) */
+@media (min-width: 1540px) {
+  .navbar {
+    padding: 12px 230px;
+  }
+}
