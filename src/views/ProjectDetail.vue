@@ -36,6 +36,7 @@ const project = projects.find((p) => p.slug === route.params.slug);
       </div>
     </main>
   </div>
+  <div class="projectFooter"></div>
 </template>
 
 <style src="../styles/pages/projectdetail.scss" scoped></style>
