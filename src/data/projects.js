@@ -1,25 +1,5 @@
 export default [
   {
-    slug: "infocaption",
-    title: "Infocaption",
-    summary:
-      "Utveckling och vidareutveckling av ett webbaserat system med fokus på tillgänglighet enligt WCAG och god användbarhet. Arbetet omfattade både nya funktioner och förbättringar och genomfördes i ett agilt Scrum-team i nära samarbete med utvecklare och verksamheten, med Git som versionshantering.",
-    cover: new URL("../assets/projects/infocaption1.webp", import.meta.url)
-      .href,
-    images: [
-      new URL("../assets/projects/infocaption1.webp", import.meta.url).href,
-      new URL("../assets/projects/infocaption2.webp", import.meta.url).href,
-      new URL("../assets/projects/infocaption3.png", import.meta.url).href,
-      new URL("../assets/projects/infocaption4.webp", import.meta.url).href,
-    ],
-    alt: "Infocaption images",
-    tags: ["Frontend", "Vue.js", "UX/UI", "WCAG", "GIT", "SCRUM"],
-    // links: {
-    //   live: 'https://…',   // valfritt
-    //   code: 'https://…'    // valfritt
-    // }
-  },
-  {
     slug: "braive",
     title: "Braive",
     summary:
@@ -40,6 +20,26 @@ export default [
       "Wireframing & Prototyping",
       "User Testing",
     ],
+  },
+  {
+    slug: "infocaption",
+    title: "Infocaption",
+    summary:
+      "Utveckling och vidareutveckling av ett webbaserat system med fokus på tillgänglighet enligt WCAG och god användbarhet. Arbetet omfattade både nya funktioner och förbättringar och genomfördes i ett agilt Scrum-team i nära samarbete med utvecklare och verksamheten, med Git som versionshantering.",
+    cover: new URL("../assets/projects/infocaption1.webp", import.meta.url)
+      .href,
+    images: [
+      new URL("../assets/projects/infocaption1.webp", import.meta.url).href,
+      new URL("../assets/projects/infocaption2.webp", import.meta.url).href,
+      new URL("../assets/projects/infocaption3.png", import.meta.url).href,
+      new URL("../assets/projects/infocaption4.webp", import.meta.url).href,
+    ],
+    alt: "Infocaption images",
+    tags: ["Frontend", "Vue.js", "UX/UI", "WCAG", "GIT", "SCRUM"],
+    // links: {
+    //   live: 'https://…',   // valfritt
+    //   code: 'https://…'    // valfritt
+    // }
   },
   {
     slug: "ricola",
