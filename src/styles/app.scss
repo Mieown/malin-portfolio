@@ -71,3 +71,40 @@ img {
     transform: translateY(-3px);
   } */
 // }
+
+/* ===== Page transition (route fade) ===== */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 420ms ease, transform 420ms ease;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.page-enter-to,
+.page-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .page-enter-active,
+  .page-leave-active {
+    transition: none;
+  }
+  .page-enter-from,
+  .page-leave-to,
+  .page-enter-to,
+  .page-leave-from {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.pageWrap {
+  width: 100%;
+}

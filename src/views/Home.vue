@@ -1,22 +1,43 @@
 <script setup>
 import projects from "../data/projects.js";
-import ProjectCard from "../components/ProjectCard.vue";
-import waveGif from "../assets/hero/malinwave.gif";
 import logo from "../assets/hero/malinlogo.svg";
-// import landscapeGif from "../assets/hero/landskapgifslutgiltig.gif";
-import testGif from "../assets/hero/utanram.png";
-import star from "../assets/hero/star.png";
 import snurr from "../assets/hero/ikonsnurr2.png";
-import cloud from "../assets/hero/cloud9.png";
-import cloudwhite from "../assets/hero/cloudwhite.png";
 import { ref, computed, onMounted, onBeforeUnmount } from "vue";
-import heroDesktop from "../assets/hero/landskapgifslutgiltig.gif";
-import heroMobile from "../assets/hero/landskap.gif";
+import heroDesktop from "../assets/hero/landskapgifnyaste.mp4";
+import heroMobile from "../assets/hero/landskap.mp4";
 
 const hoverFrame = ref(null); // aktuell bild-URL
 const previewX = ref(0); // musens X
 const previewY = ref(0); // musens Y
 const previewVisible = ref(false); // visa/dölj
+
+const mainSection = ref(null);
+const visible = ref(false);
+
+let observer;
+
+onMounted(() => {
+  observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        visible.value = true;
+        observer.disconnect(); // kör bara en gång
+      }
+    },
+    {
+      threshold: 0.35, // hur mycket som måste synas
+    }
+  );
+
+  if (mainSection.value) {
+    observer.observe(mainSection.value);
+  }
+});
+
+onBeforeUnmount(() => {
+  if (observer) observer.disconnect();
+});
+
 
 function showPreview(src) {
   hoverFrame.value = src;
@@ -42,13 +63,14 @@ function hidePreview() {
 }
 
 // Hantera responsiv bild
-const isMobile = ref(window.innerWidth <= 768);
+const isMobile = ref(false);
 
 function handleResize() {
   isMobile.value = window.innerWidth <= 768;
 }
 
 onMounted(() => {
+  handleResize(); // sätter rätt direkt vid load
   window.addEventListener("resize", handleResize);
 });
 
@@ -56,14 +78,12 @@ onBeforeUnmount(() => {
   window.removeEventListener("resize", handleResize);
 });
 
-const heroImage = computed(() =>
-  isMobile.value ? heroMobile : heroDesktop
-);
+const heroImage = computed(() => (isMobile.value ? heroMobile : heroDesktop));
 </script>
 
 <template>
   <main>
-    <section class="main">
+    <section class="main" ref="mainSection" :class="{ 'is-visible': visible }">
       <div class="main__presentation">
         <div class="main__presentation-header">
           <div class="main__presentation-header-about">
@@ -73,20 +93,35 @@ const heroImage = computed(() =>
             alt="Logo"
           />
           <div class="main__presentation-header-about-text">
+            <div class="reveal">
             <p class="main__presentation-header-about-text-intro">
               This is what I do in the digital design space and
               beyond. 
             </p>
+            </div>
+             <div class="reveal reveal--delay">
             <p class="main__presentation-header-about-text-qualities"> UX/UI Design &nbsp;|&nbsp; Frontend Development &nbsp;|&nbsp; Graphic Design</p>
+          </div>
           </div>
           </div>
         </div>
         <div>
-          <img
-            :src="heroImage"
-            class="main__presentation-landscapegif"
-            alt="Presentation image"
-          />
+          <!-- <img
+          :src="heroImage"
+          class="main__presentation-landscapegif"
+          alt="Hero presentation gif"
+        /> -->
+      <video
+  :key="heroImage"
+  class="main__presentation-landscapegif heroVideo"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata"
+>
+  <source :src="heroImage" type="video/mp4" />
+</video>
         </div>
       </div>
     </section>

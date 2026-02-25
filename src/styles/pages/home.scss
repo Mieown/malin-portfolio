@@ -37,6 +37,7 @@
             font-style: italic;
             font-size: 2.2em;
             letter-spacing: 0.3px;
+            // margin-top: 0.1rem;
           }
           &-qualities {
             font-weight: 300;
@@ -50,6 +51,78 @@
     &-landscapegif {
       width: 100%;
     }
+  }
+}
+
+/* ===== PREMIUM REVEAL (mask) + synced video fade ===== */
+
+/* Maskar raderna (klipper innehållet) */
+.reveal {
+  overflow: hidden;
+}
+
+/* Startläge: text ligger under masken */
+.reveal > .main__presentation-header-about-text-intro,
+.reveal > .main__presentation-header-about-text-qualities {
+  opacity: 0;
+  transform: translateY(-120%);
+  transition: transform 1200ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 700ms ease;
+  will-change: transform, opacity;
+}
+
+/* När sektionen syns: reveal rad 1 */
+.main.is-visible .reveal > .main__presentation-header-about-text-intro {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 180ms; /* cinematic micro-delay */
+}
+
+/* Rad 2 kommer efter */
+.main.is-visible
+  .reveal.reveal--delay
+  > .main__presentation-header-about-text-qualities {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 360ms;
+}
+
+/* Synkad video-fade */
+.heroVideo {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 1100ms ease, transform 1100ms ease;
+  transition-delay: 650ms;
+  will-change: opacity, transform;
+}
+
+.main.is-visible .heroVideo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.main__presentation-header-about-logo {
+  opacity: 0;
+  transform: scale(0.92) translateY(6px);
+  transition: opacity 900ms ease,
+    transform 1200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.main.is-visible .main__presentation-header-about-logo {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition-delay: 90ms;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal > .main__presentation-header-about-text-intro,
+  .reveal > .main__presentation-header-about-text-qualities,
+  .heroVideo {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
 }
 

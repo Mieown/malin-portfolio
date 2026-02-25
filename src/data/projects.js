@@ -3,7 +3,7 @@ export default [
     slug: "braive",
     title: "Braive",
     summary:
-      "Förbättring av Braives kundportal genom vidareutveckling av design och användarupplevelse. Arbetet omfattade användartester, analys av användarbeteenden och framtagning av UX/UI-lösningar som ökade tydlighet och användarvänlighet.",
+      "Vidareutvecklade Braives kundportal med fokus på UX/UI och användbarhet. Arbetet inkluderade användartester, analys av användarbeteenden samt framtagning av designlösningar som förbättrade struktur, tydlighet och användarvänlighet.",
     cover: new URL("../assets/projects/braive1.webp", import.meta.url).href,
     images: [
       new URL("../assets/projects/braive1.webp", import.meta.url).href,
@@ -25,7 +25,7 @@ export default [
     slug: "infocaption",
     title: "Infocaption",
     summary:
-      "Utveckling och vidareutveckling av ett webbaserat system med fokus på tillgänglighet enligt WCAG och god användbarhet. Arbetet omfattade både nya funktioner och förbättringar och genomfördes i ett agilt Scrum-team i nära samarbete med utvecklare och verksamheten, med Git som versionshantering.",
+      "Utvecklade och vidareutvecklade ett webbaserat system med fokus på tillgänglighet enligt WCAG och god användbarhet. Arbetet omfattade både nya funktioner och förbättringar och genomfördes i ett agilt Scrum-team i nära samarbete med utvecklare och tvärfunktionella team, med Git som versionshantering.",
     cover: new URL("../assets/projects/infocaption1.webp", import.meta.url)
       .href,
     images: [

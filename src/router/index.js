@@ -8,11 +8,16 @@ import ProjectDetail from "../views/ProjectDetail.vue";
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
-    { path: "/", component: Home, meta: { breadcrumb: "Home" } },
-    { path: "/about", component: About, meta: { breadcrumb: "About" } },
-    // { path: "/contact", component: Contact },
+    { path: "/", name: "home", component: Home, meta: { breadcrumb: "Home" } },
+    {
+      path: "/about",
+      name: "about",
+      component: About,
+      meta: { breadcrumb: "About" },
+    },
     {
       path: "/projects/:slug",
+      name: "project",
       component: ProjectDetail,
       props: true,
       meta: { breadcrumb: "Project" },

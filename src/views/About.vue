@@ -1,5 +1,5 @@
 <script setup>
-import waveGif from "../assets/hero/malinwave.gif";
+import MalinGif from "../assets/hero/malinwave.gif";
 import Breadcrumbs from "../components/Breadcrumbs.vue";
 </script>
 
@@ -24,7 +24,7 @@ import Breadcrumbs from "../components/Breadcrumbs.vue";
       </div>
       <div class="about__container-content-gif">
         <img
-          :src="waveGif"
+          :src="MalinGif"
           class="about__container-content-gif-img"
           alt="Presentation gif"
         />

@@ -32,6 +32,8 @@ const project = projects.find((p) => p.slug === route.params.slug);
           :key="i"
           :src="src"
           :alt="`${project.title} bild ${i + 1}`"
+          loading="lazy"
+          decoding="async"
         />
       </div>
     </main>
