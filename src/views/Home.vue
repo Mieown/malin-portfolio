@@ -119,8 +119,10 @@ const heroImage = computed(() => (isMobile.value ? heroMobile : heroDesktop));
   loop
   playsinline
   preload="metadata"
+  webkit-playsinline
 >
-  <source :src="heroImage" type="video/mp4" />
+  <source :src="heroMobile" type="video/mp4" media="(max-width: 768px)" />
+  <source :src="heroDesktop" type="video/mp4" media="(min-width: 769px)" />
 </video>
         </div>
       </div>
