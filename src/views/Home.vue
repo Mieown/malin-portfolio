@@ -111,7 +111,7 @@ const heroImage = computed(() => (isMobile.value ? heroMobile : heroDesktop));
           class="main__presentation-landscapegif"
           alt="Hero presentation gif"
         /> -->
-      <video
+      <video controls
   :key="heroImage"
   class="main__presentation-landscapegif heroVideo"
   autoplay
