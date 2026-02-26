@@ -4,7 +4,7 @@ import logo from "../assets/hero/malinlogo.svg";
 import snurr from "../assets/hero/ikonsnurr2.png";
 import { ref, computed, onMounted, onBeforeUnmount } from "vue";
 import heroDesktop from "../assets/hero/landskapgifnyaste.mp4";
-import heroMobile from "../assets/hero/landskap.mp4";
+import heroMobile from "../assets/hero/landskaptest.mp4";
 
 const hoverFrame = ref(null); // aktuell bild-URL
 const previewX = ref(0); // musens X
@@ -111,7 +111,7 @@ const heroImage = computed(() => (isMobile.value ? heroMobile : heroDesktop));
           class="main__presentation-landscapegif"
           alt="Hero presentation gif"
         /> -->
-      <video controls
+      <video
   :key="heroImage"
   class="main__presentation-landscapegif heroVideo"
   autoplay
